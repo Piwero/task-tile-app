@@ -33,10 +33,12 @@ authors = ["Piwero <piwero@gmail.com>"]
 [tool.poetry.dependencies]
 Django = "2.2.24"
 python = "^3.9"
+python-decouple = "^3.4"
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"
 isort = "^5.9.3"
+flake9 = "3.8.3"
 pre-commit = "^2.13.0"
 pytest = "^6.2.4"
 
