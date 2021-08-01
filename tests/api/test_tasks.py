@@ -29,12 +29,21 @@ class TileTests(TestCase):
         self.assertEqual(len(json_tile_list), 2)
         self.assertEqual(f"{self.tile1.status}", "live")
 
+    def test_tile_details_url(self):
+        response = self.client.get(reverse("tile_details", args=[1]))
+        self.assertEqual(response.status_code, 200)
+
+    def test_api_retrieve_tile_details(self):
+        response_tile_details = self.client.get(reverse("tile_details", args=[1]))
+        json_tile_details = response_tile_details.json()
+        self.assertEqual(json_tile_details["status"], "live")
+
 
 class TasksTests(TestCase):
     def setUp(self):
         user = User.objects.create_user(username="usertest", password="foo")
         tile1 = Tile.objects.create(launch_date=datetime.datetime.now(), status="live")
-        self.tile2 = Tile.objects.create(
+        tile2 = Tile.objects.create(
             launch_date=datetime.datetime.now(), status="pending"
         )
         self.task1 = Task.objects.create(
@@ -51,13 +60,14 @@ class TasksTests(TestCase):
             description="desc2",
             type="discussion",
             user=user,
+            tile=tile2,
         )
 
     def test_tasks_url(self):
         response = self.client.get(reverse("tasks"))
         self.assertEqual(response.status_code, 200)
 
-    def test_api_get_tiles(self):
+    def test_api_get_tasks(self):
         response_tasks_list = self.client.get(reverse("tasks"))
         json_tasks_list = response_tasks_list.json()
         self.assertEqual(len(json_tasks_list), 2)
