@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-STATUS_CHOICES = [("1", "live"), ("2", "pending"), ("3", "archived")]
+STATUS_CHOICES = [("live", "live"), ("pending", "pending"), ("archived", "archived")]
 
-TYPE_CHOICES = [("1", "survey"), ("2", "discussion"), ("3", "diary")]
+TYPE_CHOICES = [("survey", "survey"), ("discussion", "discussion"), ("diary", "diary")]
 
 
 class Tile(models.Model):
