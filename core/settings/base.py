@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_spectacular",
     "tasks",
 ]
 
@@ -105,7 +106,15 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
-    ]
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+# Django Spectacular
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Tiles and tasks API",
+    "DESCRIPTION": "Tiles and tasks backend app",
+    "VERSION": "1.0.0",
 }
 
 # Internationalization
