@@ -25,7 +25,6 @@ urlpatterns = [
         TaskViewSet.as_view(
             {
                 "get": "retrieve",
-                "post": "create",
                 "put": "update",
                 "post": "create",
                 "delete": "destroy",
