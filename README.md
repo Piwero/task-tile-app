@@ -5,7 +5,7 @@
 ---
 This app allows user to create, read, update and delete tasks. These tasks are group together in containers called tiles.
 
-##Set up
+## Set up
 
 ---
 In order to run this project, clone this repository on you local. Then, follow the following steps:
