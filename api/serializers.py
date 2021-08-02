@@ -27,8 +27,10 @@ class TaskSerializer(serializers.ModelSerializer):
             "order",
             "description",
             "type",
+            "tile",
             "tile_status",
             "launch_date",
+            "user",
             "assigned_to",
         ]
 
