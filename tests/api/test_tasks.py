@@ -102,6 +102,3 @@ class BoardTest(TestCase):
             user=user,
             tile=tile2,
         )
-
-    def test_tile_contains_tasks(self):
-        pass
