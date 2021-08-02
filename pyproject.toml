@@ -35,6 +35,7 @@ Django = "2.2.24"
 djangorestframework = "^3.12.4"
 python = "^3.9"
 python-decouple = "^3.4"
+drf-spectacular = "^0.17.3"
 
 [tool.poetry.dev-dependencies]
 ipdb = "^0.13.9"
