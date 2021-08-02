@@ -32,12 +32,19 @@ touch .env
 ```
 # Django Secrets
 
-SECRET_KEY = "" # to be provided by piwero
-```
+SECRET_KEY = "(b(c-ho$8ili!$3(&8jg%d4p$6bw9-3vkvq5qd@5hy+5!4t$^7"
+``` 
+Even secrets must are hidden in order to preserve the security of the project, they are shown in this documentation to simplify the process.
 ### Run migrations to create models in a SQL DB.
 ```commandline
 python manage.py migrate
 ```
+You must create at least an user in order to assign the tasks.
+### Create superuser
+```commandline
+python manage.py createsuperuser
+```
+
 ## Run server
 
 #### Backend
